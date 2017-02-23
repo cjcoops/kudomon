@@ -2,6 +2,7 @@ require 'trainer'
 
 describe Trainer do
 
+  let(:kudomon) {double :kudomon}
   subject(:trainer) {described_class.new()}
 
   it "is initialized with a 2d grid position" do
@@ -25,7 +26,10 @@ describe Trainer do
   end
 
   describe '#catch' do
-
+    it "adds the kudomon to its collection" do
+      subject.catch(kudomon)
+      expect(subject.collection).to include(kudomon)
+    end
   end
 
 

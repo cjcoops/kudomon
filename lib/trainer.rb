@@ -11,4 +11,8 @@ class Trainer
     self.position = position
   end
 
+  def catch(kudomon)
+    collection.push(kudomon)
+  end
+
 end
