@@ -15,6 +15,10 @@ class Trainer
     collection.push(kudomon)
   end
 
+  def find_nearby(kudomons)
+    kudomons.select {|kudomon| is_nearby?(kudomon)}
+  end
+
   def is_nearby?(kudomon)
     x_distance = position[0] - kudomon.position[0]
     y_distance = position[1] - kudomon.position[1]

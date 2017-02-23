@@ -32,6 +32,26 @@ describe Trainer do
     end
   end
 
+  describe '#find_nearby' do
+
+    let(:nearby_kudomon_1) { double :kudomon, position: [5,6] }
+    let(:nearby_kudomon_2) { double :kudomon, position: [4,6] }
+    let(:nearby_kudomon_3) { double :kudomon, position: [4,4] }
+    let(:far_kudomon_4) { double :kudomon, position: [5,3] }
+    let(:far_kudomon_5) { double :kudomon, position: [3,7] }
+    subject(:trainer) {described_class.new(position: [5,5])}
+
+    it "returns all kudomon which are within one cell in all 8 directions" do
+      kudomon_array = [ nearby_kudomon_1,
+                        nearby_kudomon_2,
+                        nearby_kudomon_3,
+                        far_kudomon_4,
+                        far_kudomon_5]
+
+      expect(subject.find_nearby(kudomon_array)).to include(nearby_kudomon_1,nearby_kudomon_2,nearby_kudomon_3)
+    end
+  end
+
   describe '#is_nearby?' do
 
     subject(:trainer) {described_class.new(position: [5,5])}
