@@ -1,9 +1,10 @@
 class Game
 
-  attr_reader :grid
+  attr_reader :grid, :trainer
 
-  def initialize(grid: [10,10])
+  def initialize(trainer_class: Trainer, grid: [10,10])
     @grid = grid
+    @trainer = trainer_class.new
   end
 
 end
