@@ -4,11 +4,10 @@ require 'sourbulb'
 
 describe Kudomon do
 
-  let(:sourbulb) { double :sourbulb, new: nil}
+  subject(:kudomon) { KudomonGenerator.new(Sourbulb, [1,2]) }
 
   it "is initialized with a 2d grid position" do
-    kudomon = KudomonGenerator.new(Sourbulb, [1,2])
-    expect(kudomon.position).to eq([1,2])
+    expect(subject.position).to eq([1,2])
   end
 
 end

@@ -4,7 +4,7 @@ class Kudomon
 
   include KudomonGenerator
 
-  attr_reader :position, :type
+  attr_reader :type, :position
 
   def initialize(position)
     @position = position
