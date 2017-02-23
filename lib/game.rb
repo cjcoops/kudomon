@@ -1,3 +1,5 @@
+require_relative 'trainer'
+
 class Game
 
   attr_reader :grid, :trainer
