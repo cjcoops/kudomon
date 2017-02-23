@@ -6,4 +6,8 @@ class Chikapu < Kudomon
     :electric
   end
 
+  def health_points
+    @health_points || 35
+  end
+
 end
