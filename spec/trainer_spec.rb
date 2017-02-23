@@ -10,8 +10,8 @@ describe Trainer do
     expect(trainer.position).to eq([1,2])
   end
 
-  it "has default coordinates of 0,0" do
-    expect(subject.position).to eq([0,0])
+  it "has default coordinates of 1,1" do
+    expect(subject.position).to eq([1,1])
   end
 
   it 'has an empty collection to begin with' do
@@ -32,5 +32,24 @@ describe Trainer do
     end
   end
 
+  describe '#is_nearby?' do
 
+    subject(:trainer) {described_class.new(position: [5,5])}
+
+    it "returns true when kudomon is within one cell in all 8 directions" do
+      allow(kudomon).to receive(:position).and_return([5,6])
+      expect(subject.is_nearby?(kudomon)).to be true
+      allow(kudomon).to receive(:position).and_return([4,6])
+      expect(subject.is_nearby?(kudomon)).to be true
+      allow(kudomon).to receive(:position).and_return([4,4])
+      expect(subject.is_nearby?(kudomon)).to be true
+    end
+
+    it "returns false when kudomon further than one cell away in any direction" do
+      allow(kudomon).to receive(:position).and_return([5,3])
+      expect(subject.is_nearby?(kudomon)).to be false
+      allow(kudomon).to receive(:position).and_return([3,7])
+      expect(subject.is_nearby?(kudomon)).to be false
+    end
+  end
 end
