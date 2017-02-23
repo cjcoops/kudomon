@@ -16,7 +16,9 @@ class Trainer
   end
 
   def is_nearby?(kudomon)
-    (position[0] - kudomon.position[0]).abs < 2 && (position[1] - kudomon.position[1]).abs < 2
+    x_distance = position[0] - kudomon.position[0]
+    y_distance = position[1] - kudomon.position[1]
+    x_distance.abs < 2 && y_distance.abs < 2
   end
 
 end
