@@ -1,9 +1,13 @@
-module Kudomon
+require_relative 'kudomon_generator'
 
-  attr_reader :position
+class Kudomon
 
-  def self.new(species, position)
-    species.new(position)
+  include KudomonGenerator
+
+  attr_reader :position, :type
+
+  def initialize(position)
+    @position = position
   end
 
 end

@@ -1,14 +1,9 @@
 require_relative 'kudomon'
 
-class Sourbulb
+class Sourbulb < Kudomon
 
-  include Kudomon
-
-  attr_reader :position, :type
-
-  def initialize(position)
-    @position = position
-    @type = :grass
+  def type
+    :grass
   end
 
 end

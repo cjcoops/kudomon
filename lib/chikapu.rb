@@ -1,14 +1,9 @@
 require_relative 'kudomon'
 
-class Chikapu
+class Chikapu < Kudomon
 
-  include Kudomon
-
-  attr_reader :position, :type
-
-  def initialize(position)
-    @position = position
-    @type = :electric
+  def type
+    :electric
   end
 
 end

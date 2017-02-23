@@ -1,12 +1,9 @@
-class Mancharred
+require 'kudomon'
 
-  include Kudomon
+class Mancharred < Kudomon
 
-  attr_reader :position, :type
-
-  def initialize(position)
-    @position = position
-    @type = :fire
+  def type
+    :fire
   end
 
 end

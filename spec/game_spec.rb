@@ -8,4 +8,5 @@ describe Game do
   it "is initialized with grid" do
     expect(subject.grid).to eq(grid)
   end
+  
 end
