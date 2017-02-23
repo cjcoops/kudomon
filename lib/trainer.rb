@@ -16,7 +16,7 @@ class Trainer
   end
 
   def find_nearby(kudomons)
-    kudomons.select {|kudomon| is_nearby?(kudomon)}
+    kudomons.select {|kudomon| is_nearby?(kudomon) && !in_collection?(kudomon)}
   end
 
   def is_nearby?(kudomon)
@@ -25,4 +25,7 @@ class Trainer
     x_distance.abs < 2 && y_distance.abs < 2
   end
 
+  def in_collection?(kudomon)
+    collection.include?(kudomon)
+  end
 end
