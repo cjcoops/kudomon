@@ -41,6 +41,11 @@ describe Trainer do
       subject.catch(nearby_kudomon_1)
       expect(subject.collection).to include(nearby_kudomon_1)
     end
+
+    it "raises an error if the kudomon is already in the collection" do
+      subject.catch(nearby_kudomon_1)
+      expect{subject.catch(nearby_kudomon_1)}.to raise_error("Kudomon already been caught!")
+    end
   end
 
   describe '#find_nearby' do

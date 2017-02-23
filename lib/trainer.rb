@@ -12,6 +12,7 @@ class Trainer
   end
 
   def catch(kudomon)
+    raise("Kudomon already been caught!") if in_collection?(kudomon)
     collection.push(kudomon)
   end
 
