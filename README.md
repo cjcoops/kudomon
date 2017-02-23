@@ -25,6 +25,7 @@ Other types include water, rock and psychic. Feel free to invent your own specie
 
 Both Trainers and Kudomon need to have a Position, so we can know which Kudomon are nearby.
 
+
 ### Part 2
 #### Gotta catch ‘em all!
 In this part we’ll implement the means for a Trainer to catch a Kudomon and add it to their collection.
@@ -43,7 +44,7 @@ At the exact same time, my neighbour Freddy sees the same Kudomon and also tries
 Freddy succeeds and adds the Kudomon to his collection before I’ve finished catching it.
 I now feel sad.
 
-How can we avoid this situation? 
+How can we avoid this situation?
 
 Now imagine instead of just two people, it’s now 1000 people cramming into Central Park to catch the same Kudomon - would the same solution work then?
 
