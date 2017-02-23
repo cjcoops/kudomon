@@ -1,6 +1,4 @@
-require 'kudomon_generator'
 require 'kudomon'
-require 'sourbulb'
 
 describe Kudomon do
 
