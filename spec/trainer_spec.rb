@@ -2,6 +2,17 @@ require 'trainer'
 
 describe Trainer do
 
+  let(:nearby_kudomon_1) { double :kudomon, position: [5,6] }
+  let(:nearby_kudomon_2) { double :kudomon, position: [4,6] }
+  let(:nearby_kudomon_3) { double :kudomon, position: [4,4] }
+  let(:far_kudomon_4) { double :kudomon, position: [5,3] }
+  let(:far_kudomon_5) { double :kudomon, position: [3,7] }
+  let(:kudomon_array) {[ nearby_kudomon_1,
+                    nearby_kudomon_2,
+                    nearby_kudomon_3,
+                    far_kudomon_4,
+                    far_kudomon_5]}
+
   let(:kudomon) {double :kudomon}
   subject(:trainer) {described_class.new()}
 
@@ -27,23 +38,13 @@ describe Trainer do
 
   describe '#catch' do
     it "adds the kudomon to its collection" do
-      subject.catch(kudomon)
-      expect(subject.collection).to include(kudomon)
+      subject.catch(nearby_kudomon_1)
+      expect(subject.collection).to include(nearby_kudomon_1)
     end
   end
 
   describe '#find_nearby' do
 
-    let(:nearby_kudomon_1) { double :kudomon, position: [5,6] }
-    let(:nearby_kudomon_2) { double :kudomon, position: [4,6] }
-    let(:nearby_kudomon_3) { double :kudomon, position: [4,4] }
-    let(:far_kudomon_4) { double :kudomon, position: [5,3] }
-    let(:far_kudomon_5) { double :kudomon, position: [3,7] }
-    let(:kudomon_array) {[ nearby_kudomon_1,
-                      nearby_kudomon_2,
-                      nearby_kudomon_3,
-                      far_kudomon_4,
-                      far_kudomon_5]}
     subject(:trainer) {described_class.new(position: [5,5])}
 
     it "returns all kudomon which are within one cell in all 8 directions" do
@@ -62,7 +63,7 @@ describe Trainer do
 
     subject(:trainer) {described_class.new(position: [5,5])}
 
-    it "returns true when kudomon is within one cell in all 8 directions" do
+    xit "returns true when kudomon is within one cell in all 8 directions" do
       allow(kudomon).to receive(:position).and_return([5,6])
       expect(subject.is_nearby?(kudomon)).to be true
       allow(kudomon).to receive(:position).and_return([4,6])
@@ -71,7 +72,7 @@ describe Trainer do
       expect(subject.is_nearby?(kudomon)).to be true
     end
 
-    it "returns false when kudomon further than one cell away in any direction" do
+    xit "returns false when kudomon further than one cell away in any direction" do
       allow(kudomon).to receive(:position).and_return([5,3])
       expect(subject.is_nearby?(kudomon)).to be false
       allow(kudomon).to receive(:position).and_return([3,7])
