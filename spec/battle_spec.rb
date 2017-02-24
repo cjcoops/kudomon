@@ -49,7 +49,7 @@ describe Battle do
   describe '#attack' do
     it 'creates a new instance of Attack on the opponent' do
       allow(Kernel).to receive(:rand).and_return(0)
-      expect(attack_class).to receive(:new).with(kudomon_2)
+      expect(attack_class).to receive(:new).with(kudomon_1, kudomon_2)
       subject.attack
     end
 
