@@ -1,3 +1,5 @@
+require_relative 'attack'
+
 class Battle
 
   attr_reader :kudomon_1, :kudomon_2, :attack_class

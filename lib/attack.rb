@@ -7,5 +7,9 @@ class Attack
     @receiver = receiver
   end
 
+  def run
+    receiver.deduct(attacker.combat_points)
+  end
+
 
 end
