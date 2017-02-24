@@ -1,5 +1,10 @@
 class Attack
 
+  MULTIPLIER = {
+    :water => :fire,
+    :fire => :grass
+  }
+
   attr_reader :attacker, :receiver
 
   def initialize(attacker, receiver)
@@ -13,7 +18,7 @@ class Attack
   end
 
   def points
-    if attacker.type == :water && receiver.type == :fire
+    if MULTIPLIER[attacker.type] == receiver.type
       attacker.combat_points * 2
     else
       attacker.combat_points
