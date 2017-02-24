@@ -2,6 +2,8 @@ require 'chikapu'
 
 describe Chikapu do
 
+  it { expect(described_class).to be < Kudomon }
+
   subject(:chikapu) {described_class.new([1,2])}
 
   it "has type electric" do

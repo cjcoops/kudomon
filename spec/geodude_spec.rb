@@ -2,6 +2,8 @@ require 'geodude'
 
 describe Geodude do
 
+  it { expect(described_class).to be < Kudomon }
+
   subject(:geodude) {described_class.new([1,2])}
 
   it "has type rock" do
