@@ -2,11 +2,12 @@ require_relative 'trainer'
 
 class Game
 
-  attr_reader :grid, :trainer
+  attr_reader :trainer_class, :trainers, :kudomons
 
-  def initialize(trainer_class: Trainer, grid: [10,10])
-    @grid = grid
-    @trainer = trainer_class.new
+  def initialize(trainer_class: Trainer)
+    @trainer_class = trainer_class.new
+    @trainers = []
+    @kudomons = []
   end
 
 end

@@ -6,17 +6,16 @@ describe Game do
   let(:trainer_class) { double :trainer_class, new: trainer }
   subject(:game) { described_class.new(trainer_class: trainer_class)}
 
-  it "is initialized with a grid dimensions" do
-    game = Game.new(trainer_class: trainer_class, grid: [20,30])
-    expect(game.grid).to eq([20,30])
+  it "has no trainers to begin with" do
+    expect(game.trainers).to be_empty
   end
 
-  it "has a default grid size of 10 x 10" do
-    expect(subject.grid).to eq([10,10])
+  it "has no kudomon to begin with" do
+    expect(game.kudomons).to be_empty
   end
 
-  it "is initialized with a trainer" do
-    expect(subject.trainer).to eq(trainer)
+  describe '#add_kudomon' do
+    
   end
 
 end
