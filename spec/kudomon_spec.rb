@@ -1,3 +1,5 @@
+#knows the common features for all kudomon species
+
 require 'kudomon'
 
 describe Kudomon do
@@ -16,5 +18,15 @@ describe Kudomon do
     end
   end
 
+  describe '#knocked_out?' do
+    it 'returns false if kudomon HP > 0' do
+      subject.health_points = 10
+      expect(subject.knocked_out?).to be false
+    end
 
+    it 'returns true if kudomon HP <= 0' do
+      subject.health_points = 0
+      expect(subject.knocked_out?).to be true
+    end
+  end
 end

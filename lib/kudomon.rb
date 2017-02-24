@@ -19,4 +19,8 @@ class Kudomon
     self.health_points -= damage
   end
 
+  def knocked_out?
+    health_points <= 0
+  end
+
 end
