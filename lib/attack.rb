@@ -1,3 +1,5 @@
+#responsible for deducting HP in an attack
+
 class Attack
 
   EFFECTIVENESS_RULES = {

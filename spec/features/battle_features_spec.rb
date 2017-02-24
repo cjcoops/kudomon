@@ -1,6 +1,6 @@
-require 'chikapu'
-require 'mancharred'
-require 'battle'
+require_relative '../../lib/chikapu'
+require_relative '../../lib/mancharred'
+require_relative '../../lib/battle'
 
 describe 'Battle features' do
   before(:each) do
@@ -29,3 +29,12 @@ describe 'Battle features' do
     expect(@mancharred.health_points).to eq(9)
   end
 end
+#
+# describe 'Game features' do
+#   before(:each) do
+#     @game = Game.new
+#     @trainer = Trainer.new([3,3])
+#     @abra = Abra.new([5,5])
+#     @battle = Battle.new(@chikapu, @mancharred)
+#     allow(Kernel).to receive(:rand).and_return(1)
+#   end

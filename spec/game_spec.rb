@@ -27,5 +27,4 @@ describe Game do
       expect(game.trainers).to include(trainer)
     end
   end
-
 end

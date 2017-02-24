@@ -1,8 +1,10 @@
+#knows about all the kudomon and trainers in the game
+
 require_relative 'trainer'
 
 class Game
 
-  attr_reader :trainer_class, :trainers, :kudomons
+  attr_reader :trainers, :kudomons
 
   def initialize
     @trainers = []
@@ -16,5 +18,4 @@ class Game
   def add_trainer(trainer)
     trainers.push(trainer)
   end
-
 end

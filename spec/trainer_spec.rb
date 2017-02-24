@@ -17,7 +17,7 @@ describe Trainer do
   subject(:trainer) {described_class.new()}
 
   it "is initialized with a 2d grid position" do
-    trainer = described_class.new(position: [1,2])
+    trainer = described_class.new([1,2])
     expect(trainer.position).to eq([1,2])
   end
 
@@ -50,7 +50,7 @@ describe Trainer do
 
   describe '#find_nearby' do
 
-    subject(:trainer) {described_class.new(position: [5,5])}
+    subject(:trainer) {described_class.new([5,5])}
 
     it "returns all kudomon which are within one cell in all 8 directions" do
       expect(subject.find_nearby(kudomon_array)).to include(nearby_kudomon_1,nearby_kudomon_2,nearby_kudomon_3)

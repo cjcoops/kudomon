@@ -2,7 +2,7 @@ class Trainer
 
   attr_accessor :position, :collection
 
-  def initialize(position: [1,1])
+  def initialize(position = [1,1])
     @position = position
     @collection = []
   end
