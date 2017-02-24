@@ -15,6 +15,11 @@ class Battle
     kudomon_1.knocked_out? || kudomon_2.knocked_out?
   end
 
+  def winner
+    return if !over?
+    kudomon_1.knocked_out? ? kudomon_2 : kudomon_1
+  end
+
   private
 
   def set_initial_turn
