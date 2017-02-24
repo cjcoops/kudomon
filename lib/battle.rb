@@ -14,6 +14,7 @@ class Battle
 
   def attack
     attack_class.new(opponent)
+    return winner if over?
   end
 
   def over?

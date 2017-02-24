@@ -58,5 +58,11 @@ describe Battle do
       expect(attack_class).to receive(:new).with(kudomon_1)
       subject.attack
     end
+
+    it "returns the winner if the attack has won the game" do
+      allow(Kernel).to receive(:rand).and_return(1)
+      allow(kudomon_1).to receive(:knocked_out?).and_return(true)
+      expect(subject.attack).to eq(kudomon_2)
+    end
   end
 end
