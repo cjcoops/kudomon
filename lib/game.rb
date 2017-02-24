@@ -10,4 +10,8 @@ class Game
     @kudomons = []
   end
 
+  def spawn_kudomon(kudomon)
+    kudomons.push(kudomon)
+  end
+
 end
