@@ -1,9 +1,11 @@
 class Attack
 
-  attr_reader :kudomon
+  attr_reader :attacker, :receiver
 
-  def initialize(kudomon)
-    @kudomon = kudomon
+  def initialize(attacker, receiver)
+    @attacker = attacker
+    @receiver = receiver
   end
-  
+
+
 end
