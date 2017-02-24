@@ -9,7 +9,15 @@ class Attack
   end
 
   def run
-    receiver.deduct(attacker.combat_points)
+    receiver.deduct(points)
+  end
+
+  def points
+    if attacker.type == :water && receiver.type == :fire
+      attacker.combat_points * 2
+    else
+      attacker.combat_points
+    end
   end
 
 
