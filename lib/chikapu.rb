@@ -10,8 +10,8 @@ class Chikapu < Kudomon
     35
   end
 
-  def deduct(damage)
-    @health_points -= damage
-  end
+  # def deduct(damage)
+  #   @health_points -= damage
+  # end
 
 end

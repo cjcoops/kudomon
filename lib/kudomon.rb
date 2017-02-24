@@ -1,6 +1,7 @@
 class Kudomon
 
-  attr_reader :type, :position, :health_points
+  attr_reader :type, :position
+  attr_accessor :health_points
 
   def initialize(position)
     @position = position
@@ -12,6 +13,10 @@ class Kudomon
   end
 
   def initial_health_points
+  end
+
+  def deduct(damage)
+    self.health_points -= damage
   end
 
 end
