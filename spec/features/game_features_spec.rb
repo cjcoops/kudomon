@@ -33,6 +33,4 @@ describe 'Game features' do
     expect(@trainer_2.find_nearby(@game.kudomons)).to include(@abra)
     expect{@trainer_2.catch(@abra)}.not_to raise_error
   end
-
-
 end
