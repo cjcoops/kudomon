@@ -6,4 +6,8 @@ class Squirtle < Kudomon
     :water
   end
 
+  def health_points
+    @health_points || 44
+  end
+
 end

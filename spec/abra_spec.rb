@@ -2,9 +2,18 @@ require 'abra'
 
 describe Abra do
 
+  subject(:abra) {described_class.new([1,2])}
+
   it "has type psychic" do
-    abra = Abra.new([1,2])
-    expect(abra.type).to eq(:psychic)
+    expect(subject.type).to eq(:psychic)
+  end
+
+  it "has base health points of 44" do
+    expect(subject.health_points).to eq(44)
+  end
+
+  it "has combat points of 10" do
+    expect(subject.combat_points).to eq(10)
   end
 
 end

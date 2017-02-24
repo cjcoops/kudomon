@@ -10,8 +10,4 @@ class Chikapu < Kudomon
     @health_points || 35
   end
 
-  def combat_points
-    55
-  end
-
 end

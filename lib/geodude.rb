@@ -6,4 +6,8 @@ class Geodude < Kudomon
     :rock
   end
 
+  def health_points
+    @health_points || 40
+  end
+
 end

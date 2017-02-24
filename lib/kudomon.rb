@@ -6,4 +6,8 @@ class Kudomon
     @position = position
   end
 
+  def combat_points
+    10
+  end
+
 end

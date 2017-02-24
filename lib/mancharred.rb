@@ -6,4 +6,8 @@ class Mancharred < Kudomon
     :fire
   end
 
+  def health_points
+    @health_points || 39
+  end
+
 end

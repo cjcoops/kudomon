@@ -6,4 +6,8 @@ class Sourbulb < Kudomon
     :grass
   end
 
+  def health_points
+    @health_points || 45
+  end
+
 end

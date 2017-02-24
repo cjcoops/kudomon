@@ -12,8 +12,8 @@ describe Chikapu do
     expect(subject.health_points).to eq(35)
   end
 
-  it "has combat points of 55" do
-    expect(subject.combat_points).to eq(55)
+  it "has combat points of 10" do
+    expect(subject.combat_points).to eq(10)
   end
 
 end

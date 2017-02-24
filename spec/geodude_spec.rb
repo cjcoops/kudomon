@@ -2,9 +2,18 @@ require 'geodude'
 
 describe Geodude do
 
+  subject(:geodude) {described_class.new([1,2])}
+
   it "has type rock" do
-    geodude = Geodude.new([1,2])
-    expect(geodude.type).to eq(:rock)
+    expect(subject.type).to eq(:rock)
+  end
+
+  it "has base health points of 40" do
+    expect(subject.health_points).to eq(40)
+  end
+
+  it "has combat points of 10" do
+    expect(subject.combat_points).to eq(10)
   end
 
 end
