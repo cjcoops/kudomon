@@ -24,6 +24,7 @@ describe 'Game features' do
   it 'trainers can catch nearby kudomon' do
     @trainer_1.catch(@abra)
     expect(@trainer_1.collection).to include(@abra)
+    expect{@trainer_1.catch(@geodude)}.to raise_error("Kudomon is too far away!")
   end
 
   it 'different trainers are able to catch the same kudomon' do

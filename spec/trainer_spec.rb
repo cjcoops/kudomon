@@ -37,6 +37,9 @@ describe Trainer do
   end
 
   describe '#catch' do
+
+    subject(:trainer) {described_class.new([5,5])}
+    
     it "adds the kudomon to its collection" do
       subject.catch(nearby_kudomon_1)
       expect(subject.collection).to include(nearby_kudomon_1)
@@ -45,6 +48,10 @@ describe Trainer do
     it "raises an error if the kudomon is already in the collection" do
       subject.catch(nearby_kudomon_1)
       expect{subject.catch(nearby_kudomon_1)}.to raise_error("Kudomon already been caught!")
+    end
+
+    it "raises an error if the kudomon is not nearby" do
+      expect{subject.catch(far_kudomon_4)}.to raise_error("Kudomon is too far away!")
     end
   end
 
