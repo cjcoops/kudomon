@@ -9,7 +9,7 @@ describe Kudomon do
   end
 
   describe '#deduct' do
-    it 'reduces health points by the amount of damage' do
+    it 'reduces health points by the amount of damage inflicted' do
       subject.health_points = 10
       subject.deduct(10)
       expect(subject.health_points).to eq(0)
