@@ -5,8 +5,9 @@ describe Battle do
   let(:kudomon_1) { double :kudomon, knocked_out?: false }
   let(:kudomon_2) { double :kudomon, knocked_out?: false }
   let(:loser) {double :kudomon , knocked_out?: true}
-  subject(:battle) { described_class.new(kudomon_1, kudomon_2) }
-  let(:finished_battle) { described_class.new(loser, kudomon_2)}
+  let(:attack_class) {double :attack_class, new: nil}
+  subject(:battle) { described_class.new(kudomon_1, kudomon_2, attack_class) }
+  let(:finished_battle) { described_class.new(loser, kudomon_2, attack_class)}
 
   it "is initialized with 2 kudomon" do
     expect(subject.kudomon_1).to eq(kudomon_1)
@@ -42,6 +43,20 @@ describe Battle do
 
     it 'returns nil if both kudomon are still alive' do
       expect(subject.winner).to be nil
+    end
+  end
+
+  describe '#attack' do
+    it 'creates a new instance of Attack on the opponent' do
+      allow(Kernel).to receive(:rand).and_return(0)
+      expect(attack_class).to receive(:new).with(kudomon_2)
+      subject.attack
+    end
+
+    it 'creates a new instance of Attack on the opponent' do
+      allow(Kernel).to receive(:rand).and_return(1)
+      expect(attack_class).to receive(:new).with(kudomon_1)
+      subject.attack
     end
   end
 end
