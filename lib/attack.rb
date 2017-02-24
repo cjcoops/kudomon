@@ -5,6 +5,7 @@ class Attack
   def initialize(attacker, receiver)
     @attacker = attacker
     @receiver = receiver
+    run
   end
 
   def run
