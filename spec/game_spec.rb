@@ -4,8 +4,7 @@ describe Game do
 
   let(:kudomon) { double :kudomon }
   let(:trainer) { double :trainer }
-  let(:trainer_class) { double :trainer_class, new: trainer }
-  subject(:game) { described_class.new(trainer_class: trainer_class)}
+  subject(:game) { described_class.new()}
 
   it "has no trainers to begin with" do
     expect(game.trainers).to be_empty
@@ -16,9 +15,16 @@ describe Game do
   end
 
   describe '#spawn_kudomon' do
-    it 'spawn the kudomon to the kudomons array' do
+    it 'adds the kudomon to the kudomons array' do
       game.spawn_kudomon(kudomon)
       expect(game.kudomons).to include(kudomon)
+    end
+  end
+
+  describe '#add_trainer' do
+    it 'adds the trainer to the trainer array' do
+      game.add_trainer(trainer)
+      expect(game.trainers).to include(trainer)
     end
   end
 

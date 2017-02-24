@@ -4,14 +4,17 @@ class Game
 
   attr_reader :trainer_class, :trainers, :kudomons
 
-  def initialize(trainer_class: Trainer)
-    @trainer_class = trainer_class.new
+  def initialize
     @trainers = []
     @kudomons = []
   end
 
   def spawn_kudomon(kudomon)
     kudomons.push(kudomon)
+  end
+
+  def add_trainer(trainer)
+    trainers.push(trainer)
   end
 
 end
