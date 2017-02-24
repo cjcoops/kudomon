@@ -26,26 +26,6 @@ describe Battle do
     end
   end
 
-  describe '#over?' do
-    it "battle is over when one of the kudomon is knocked out" do
-      expect(finished_battle.over?).to be true
-    end
-
-    it "battle is not over when both of the kudomon are still alive" do
-      expect(subject.over?).to be false
-    end
-  end
-
-  describe '#winner' do
-    it 'returns the winner of the battle' do
-      expect(finished_battle.winner).to eq(kudomon_2)
-    end
-
-    it 'returns nil if both kudomon are still alive' do
-      expect(subject.winner).to be nil
-    end
-  end
-
   describe '#attack' do
     it 'creates a new instance of Attack on the opponent' do
       allow(Kernel).to receive(:rand).and_return(0)

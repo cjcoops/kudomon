@@ -22,5 +22,4 @@ class Kudomon
   def knocked_out?
     health_points <= 0
   end
-
 end

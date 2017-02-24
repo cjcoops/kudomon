@@ -38,5 +38,4 @@ class Attack
   def is_more_effective?
     EFFECTIVENESS_RULES[attacker.type].include?(receiver.type)
   end
-
 end

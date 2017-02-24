@@ -1,3 +1,5 @@
+#knows the specific features of Squirtle species
+
 require_relative 'kudomon'
 
 class Squirtle < Kudomon
@@ -6,8 +8,9 @@ class Squirtle < Kudomon
     :water
   end
 
+  private
+
   def initial_health_points
     44
   end
-
 end

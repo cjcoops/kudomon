@@ -1,3 +1,5 @@
+#responsible for handling the flow of a battle
+
 require_relative 'attack'
 
 class Battle
@@ -11,18 +13,14 @@ class Battle
     @attack_class = attack_class
   end
 
-  def turn
-    @turn || set_initial_turn
-  end
-
   def attack
     attack_class.new(turn, opponent)
     return winner if over?
     switch_turns
   end
 
-  def over?
-    kudomon_1.knocked_out? || kudomon_2.knocked_out?
+  def turn
+    @turn || set_initial_turn
   end
 
   def winner
@@ -31,6 +29,10 @@ class Battle
   end
 
   private
+
+  def over?
+    kudomon_1.knocked_out? || kudomon_2.knocked_out?
+  end
 
   def set_initial_turn
     [kudomon_1, kudomon_2][Kernel.rand(0..1)]
@@ -43,5 +45,4 @@ class Battle
   def switch_turns
     self.turn = opponent
   end
-
 end
