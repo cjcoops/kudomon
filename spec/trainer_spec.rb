@@ -63,25 +63,4 @@ describe Trainer do
       expect(subject.find_nearby(kudomon_array)).not_to include(nearby_kudomon_1,far_kudomon_4,far_kudomon_5)
     end
   end
-
-  describe '#is_nearby?' do
-
-    subject(:trainer) {described_class.new(position: [5,5])}
-
-    xit "returns true when kudomon is within one cell in all 8 directions" do
-      allow(kudomon).to receive(:position).and_return([5,6])
-      expect(subject.is_nearby?(kudomon)).to be true
-      allow(kudomon).to receive(:position).and_return([4,6])
-      expect(subject.is_nearby?(kudomon)).to be true
-      allow(kudomon).to receive(:position).and_return([4,4])
-      expect(subject.is_nearby?(kudomon)).to be true
-    end
-
-    xit "returns false when kudomon further than one cell away in any direction" do
-      allow(kudomon).to receive(:position).and_return([5,3])
-      expect(subject.is_nearby?(kudomon)).to be false
-      allow(kudomon).to receive(:position).and_return([3,7])
-      expect(subject.is_nearby?(kudomon)).to be false
-    end
-  end
 end
