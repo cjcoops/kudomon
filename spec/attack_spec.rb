@@ -15,7 +15,7 @@ describe Attack do
     expect(subject.attacker).to eq(water_kudomon)
   end
 
-  it 'calls deduct  on the receiver with attacks combat points' do
+  it 'calls deduct on the receiver with attackers combat points' do
     expect(grass_kudomon).to receive(:deduct).with(10)
     described_class.new(water_kudomon, grass_kudomon)
   end

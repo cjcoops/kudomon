@@ -1,6 +1,6 @@
 class Attack
 
-  MULTIPLIER_RULES = {
+  EFFECTIVENESS_RULES = {
     :water => [:fire],
     :fire => [:grass],
     :grass => [:rock],
@@ -8,6 +8,8 @@ class Attack
     :electric => [:water],
     :psychic => [:water, :fire, :grass, :rock, :electric]
   }
+
+  DEFAULT_MULTIPLIER = 2
 
   attr_reader :attacker, :receiver
 
@@ -17,17 +19,22 @@ class Attack
     run
   end
 
+  private
+
   def run
     receiver.deduct(points)
   end
 
   def points
-    if MULTIPLIER_RULES[attacker.type].include?(receiver.type)
-      attacker.combat_points * 2
-    else
-      attacker.combat_points
-    end
+    attacker.combat_points * multiplier
   end
 
+  def multiplier
+    is_more_effective? ? DEFAULT_MULTIPLIER : 1
+  end
+
+  def is_more_effective?
+    EFFECTIVENESS_RULES[attacker.type].include?(receiver.type)
+  end
 
 end
