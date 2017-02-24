@@ -15,7 +15,7 @@ describe Attack do
     expect(subject.attacker).to eq(water_kudomon)
   end
 
-  it 'calls deduct on the receiver' do
+  it 'calls deduct  on the receiver with attacks combat points' do
     expect(grass_kudomon).to receive(:deduct).with(10)
     described_class.new(water_kudomon, grass_kudomon)
   end
@@ -43,6 +43,36 @@ describe Attack do
   it 'deducts 2x points if electric vs water' do
     expect(water_kudomon).to receive(:deduct).with(20)
     described_class.new(electric_kudomon, water_kudomon)
+  end
+
+  it 'deducts 2x points if psychic vs water' do
+    expect(water_kudomon).to receive(:deduct).with(20)
+    described_class.new(psychic_kudomon, water_kudomon)
+  end
+
+  it 'deducts 2x points if psychic vs fire' do
+    expect(fire_kudomon).to receive(:deduct).with(20)
+    described_class.new(psychic_kudomon, fire_kudomon)
+  end
+
+  it 'deducts 2x points if psychic vs grass' do
+    expect(grass_kudomon).to receive(:deduct).with(20)
+    described_class.new(psychic_kudomon, grass_kudomon)
+  end
+
+  it 'deducts 2x points if psychic vs rock' do
+    expect(rock_kudomon).to receive(:deduct).with(20)
+    described_class.new(psychic_kudomon, rock_kudomon)
+  end
+
+  it 'deducts 2x points if psychic vs electric' do
+    expect(electric_kudomon).to receive(:deduct).with(20)
+    described_class.new(psychic_kudomon, electric_kudomon)
+  end
+
+  it 'deducts 1x points if psychic vs itself' do
+    expect(psychic_kudomon).to receive(:deduct).with(10)
+    described_class.new(psychic_kudomon, psychic_kudomon)
   end
 
 
