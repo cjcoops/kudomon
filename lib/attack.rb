@@ -1,8 +1,11 @@
 class Attack
 
-  MULTIPLIER = {
+  MULTIPLIER_RULES = {
     :water => :fire,
-    :fire => :grass
+    :fire => :grass,
+    :grass => :rock,
+    :rock => :electric,
+    :electric => :water
   }
 
   attr_reader :attacker, :receiver
@@ -18,7 +21,7 @@ class Attack
   end
 
   def points
-    if MULTIPLIER[attacker.type] == receiver.type
+    if MULTIPLIER_RULES[attacker.type] == receiver.type
       attacker.combat_points * 2
     else
       attacker.combat_points

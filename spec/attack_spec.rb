@@ -30,5 +30,20 @@ describe Attack do
     described_class.new(fire_kudomon, grass_kudomon)
   end
 
+  it 'deducts 2x points if grass vs rock' do
+    expect(rock_kudomon).to receive(:deduct).with(20)
+    described_class.new(grass_kudomon, rock_kudomon)
+  end
+
+  it 'deducts 2x points if rock vs electric' do
+    expect(electric_kudomon).to receive(:deduct).with(20)
+    described_class.new(rock_kudomon, electric_kudomon)
+  end
+
+  it 'deducts 2x points if electric vs water' do
+    expect(water_kudomon).to receive(:deduct).with(20)
+    described_class.new(electric_kudomon, water_kudomon)
+  end
+
 
 end
