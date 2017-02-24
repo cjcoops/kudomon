@@ -8,4 +8,5 @@ describe Kudomon do
     expect(subject.position).to eq([1,2])
   end
 
+
 end

@@ -16,4 +16,11 @@ describe Mancharred do
     expect(subject.combat_points).to eq(10)
   end
 
+  describe '#deduct' do
+    it 'reduces health points by the amount of damage' do
+      subject.deduct(10)
+      expect(subject.health_points).to eq(29)
+    end
+  end
+
 end

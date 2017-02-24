@@ -2,6 +2,8 @@ require 'abra'
 
 describe Abra do
 
+  it { expect(described_class).to be < Kudomon }
+
   subject(:abra) {described_class.new([1,2])}
 
   it "has type psychic" do
