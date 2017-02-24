@@ -11,10 +11,14 @@ class Battle
     @turn || set_initial_turn
   end
 
+  def over?
+    kudomon_1.knocked_out? || kudomon_2.knocked_out?
+  end
+
   private
 
   def set_initial_turn
-    [@kudomon_1, @kudomon_2][Kernel.rand(0..1)]
+    [kudomon_1, kudomon_2][Kernel.rand(0..1)]
   end
 
 end
