@@ -1,3 +1,5 @@
+#knows the actions that a trainer can perform
+
 class Trainer
 
   attr_accessor :position, :collection
@@ -20,6 +22,8 @@ class Trainer
   def find_nearby(kudomons)
     kudomons.select {|kudomon| is_nearby?(kudomon) && !in_collection?(kudomon)}
   end
+
+  private
 
   def is_nearby?(kudomon)
     x_distance = position[0] - kudomon.position[0]

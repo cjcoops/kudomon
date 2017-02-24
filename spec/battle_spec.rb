@@ -4,10 +4,10 @@ describe Battle do
 
   let(:kudomon_1) { double :kudomon_1, knocked_out?: false }
   let(:kudomon_2) { double :kudomon_2, knocked_out?: false }
-  let(:loser) {double :kudomon_loser , knocked_out?: true}
-  let(:attack_class) {double :attack_class, new: nil}
+  let(:loser) { double :kudomon_loser , knocked_out?: true }
+  let(:attack_class) { double :attack_class, new: nil }
   subject(:battle) { described_class.new(kudomon_1, kudomon_2, attack_class) }
-  let(:finished_battle) { described_class.new(loser, kudomon_2, attack_class)}
+  let(:finished_battle) { described_class.new(loser, kudomon_2, attack_class) }
 
   it "is initialized with 2 kudomon" do
     expect(subject.kudomon_1).to eq(kudomon_1)

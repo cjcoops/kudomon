@@ -4,7 +4,7 @@ describe Squirtle do
 
   it { expect(described_class).to be < Kudomon }
 
-  subject(:squirtle) {described_class.new([1,2])}
+  subject(:squirtle) { described_class.new([1,2]) }
 
   it "has type water" do
     expect(subject.type).to eq(:water)

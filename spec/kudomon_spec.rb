@@ -1,5 +1,3 @@
-#knows the common features for all kudomon species
-
 require 'kudomon'
 
 describe Kudomon do

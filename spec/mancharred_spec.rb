@@ -4,7 +4,7 @@ describe Mancharred do
 
   it { expect(described_class).to be < Kudomon }
 
-  subject(:mancharred) {described_class.new([1,2])}
+  subject(:mancharred) { described_class.new([1,2]) }
 
   it "has type fire" do
     expect(subject.type).to eq(:fire)

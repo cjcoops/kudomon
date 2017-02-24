@@ -4,7 +4,7 @@ describe Game do
 
   let(:kudomon) { double :kudomon }
   let(:trainer) { double :trainer }
-  subject(:game) { described_class.new()}
+  subject(:game) { described_class.new() }
 
   it "has no trainers to begin with" do
     expect(game.trainers).to be_empty

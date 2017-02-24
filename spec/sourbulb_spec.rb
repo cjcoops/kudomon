@@ -4,7 +4,7 @@ describe Sourbulb do
 
   it { expect(described_class).to be < Kudomon }
 
-  subject(:sourbulb) {described_class.new([1,2])}
+  subject(:sourbulb) { described_class.new([1,2]) }
 
   it "has type grass" do
     expect(subject.type).to eq(:grass)
