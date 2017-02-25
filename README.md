@@ -1,12 +1,25 @@
 # Kudomon GO!
-Credit Kudos' Technical Challenge.
+My solution to the Credit Kudos' Technical Challenge.
 
-## What is this challenge for?
-We want to understand the way you think about problems, and how you write code to tackle them. We’re not looking for the most efficient algorithmics, we’re looking for the simplest solution. We’re not going to give much in the way of guidance as to the specifics of implementation - if you think a model needs an attribute or a method, you go ahead and do it. You’re in charge.
+To get the code and run tests do the following.
+```
+$ git clone https://github.com/cjcoops/kudomon.git
+$ cd kudomon
+$ bundle install
+$ rspec
+```
 
-## How should solutions be presented?
-Ideally, solutions will be Ruby code with tests. Rails is optional.
-Fork this repo, and raise a pull-request containing your answer.
+## Design
+* The Game class contains all the Trainers and Kudomon which exist. It has methods to add Trainers and Kudomon to the Game.
+
+* A Trainer is initialized with a 2D grid location and has methods to move to another location, find nearby Kudomon and catch Kudomon adding them to their collection. A Kudomon is classed as nearby if it is within one cell in all eight directions.
+
+* There are many species of Kudomon, each with their own type and initial health points. There is a separate class for each. They all inherit common properties and methods from the Kudomon superclass (which is initialised with a 2D gird location). This avoids having repeated code in each species class or having a single Kudomon class with a long case (or if/else) statement, and makes it easy to add more species if required.
+
+* A Battle is initialised with two Kudomon and has an attack method which creates a new Attack instance taking both Kudomon as arguments. The Battle class contains the logic for the flow of the battle, checking if the game is over and declaring a winner.
+
+* I made a separate class to handle the Attack logic. If a certain type is more effective against another type, then the attack inflicts double points on the receiver. I used a hash map to determine whether this is the case.
+
 
 ## So, what’s the challenge?
 Imagine that all around us, in a virtual world, are virtual creatures (Kudomon) that you can catch and collect.
